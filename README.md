@@ -7,4 +7,4 @@
  Update ith Bit, Clear last i bits, Clear range of bits, Replace bits
 
 ## bit_manip_3.cpp
- Power of two
+ Power of two, Power of 4 (EX)
