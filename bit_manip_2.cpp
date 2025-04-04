@@ -28,11 +28,18 @@ void clear_range_bits(int &num, int i, int j) {
     num = num & mask; 
 }
 
+void replace_bits(int &m, int n, int i, int j) {
+    clear_range_bits(m, i, j); // Step 1
+    int mask = n << i; // Step 2
+
+    m = m | mask; // Step 3
+}
+
 int main() {       //   j     i
     int num = 127; // 1 1 1 1 1 1 1 
+    int n = 9;
     int i = 2, j = 5;
 
-    clear_range_bits(num, i, j);
-
-    cout << num << endl; // Should return 67
+    replace_bits(num, n, i, j);
+    cout << num << endl; // Should return 103
 }
