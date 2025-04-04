@@ -19,17 +19,20 @@ void clear_i_bits(int &num, int pos) {
     num = num & temp;
 }
 
-int main() {
-    // 0 1 0 1 0 1 = 21
-    int num = 21, second = 21;
-    update_ith_bit(num,0,0);
-    cout << num << endl; // Should return 20
+void clear_range_bits(int &num, int i, int j) {
+    int a = -1 << (j+1); // otherwise, (~0) << (j+1)
+    int b = (1 << i) - 1;
 
-    update_ith_bit(second, 1, 1); 
-    cout << second << endl; // should return 23
+    int mask = a | b;
 
-    // 1 1 1 0 1 0 1 =   117
-    int n = 117;
-    clear_i_bits(n, 3);
-    cout << n << endl; // should get 112
+    num = num & mask; 
+}
+
+int main() {       //   j     i
+    int num = 127; // 1 1 1 1 1 1 1 
+    int i = 2, j = 5;
+
+    clear_range_bits(num, i, j);
+
+    cout << num << endl; // Should return 67
 }
