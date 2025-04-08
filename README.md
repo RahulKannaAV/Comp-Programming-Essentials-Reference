@@ -8,3 +8,4 @@
 
 ## bit_manip_3.cpp
  Power of two, Power of 4 (EX)
+
