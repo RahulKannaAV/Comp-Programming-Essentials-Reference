@@ -52,9 +52,20 @@ int countBits(int num){
     return count;
 }
 
+int countBitsHack(int n) {
+    int cnt = 0;
+
+    while(n > 0) {
+        n = (n & (n-1));
+        cnt++;
+    }
+
+    return cnt;
+}
+
 int main() {
     
 
-    cout << countBits(14); // 4
-
+    cout << countBits(14) << endl; // 4
+    cout << countBitsHack(14) << endl; // 4
 }
